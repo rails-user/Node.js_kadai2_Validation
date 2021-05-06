@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Node.js課題②</title>
+    <meta name="description" content="Node.js課題②">
+    <a href="http://localhost:3000/login">Login</a>
+    <a href="http://localhost:3000/register">Register</a>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <p>Register</p>
+        </tr>
+        <tr>
+            <form action="/register" method="post">
+                <p>username：<input type="text" name="username" size="40" value="<%= username %>"></p>
+                <p>email：<input type="text" name="email" size="40" value="<%= email %>"></p>
+                <p>password：<input type="text" name="password" size="40" value="<%= password %>"></p>
+                <p>confirmPassword：<input type="text" name="confirmPassword" size="40" value="<%= confirmPassword %>">
+                </p>
+                <p><input type="submit" value="Register"></p>
+            </form>
+        </tr>
+    </table>
+    <% if(errMessage) { %>
+        <ul>
+            <% for (let i in errMessage) { %>
+                <li>
+                <%= errMessage[i].msg %>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
+</body>
+
+</html>
